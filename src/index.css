@@ -1,0 +1,34 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5% !important;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1.6rem !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #cfcfcf;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a5a5a5;
+}
+
+::selection {
+  background-color: #93b96c;
+  color: #fff;
+}
