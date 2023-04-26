@@ -17,12 +17,12 @@ const SavedRecipes = () => {
   return (
     <div style={styles.savedRecipesContainer}>
       <Grid container spacing={5}>
+        <ArrowBack
+          fontSize='large'
+          onClick={() => navigate(-1)}
+          sx={{ cursor: 'pointer' }}
+        />
         <Grid item xs={12}>
-          <ArrowBack
-            fontSize='large'
-            onClick={() => navigate(-1)}
-            sx={{ cursor: 'pointer' }}
-          />
           <Typography variant='h4' style={{ textAlign: 'center' }}>
             Saved Recipes
           </Typography>

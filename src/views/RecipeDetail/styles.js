@@ -1,7 +1,8 @@
 export const styles = {
   recipeDetail: {
     display: 'flex',
-    padding: '5rem',
+    width: '90%',
+    margin: '0 auto',
     justifyContent: 'space-between',
   },
   topIconContainer: {

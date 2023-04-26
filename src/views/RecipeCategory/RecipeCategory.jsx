@@ -29,12 +29,12 @@ const RecipeCategory = () => {
       ) : (
         <div style={styles.allMealsContainer}>
           <Grid container spacing={5}>
+            <ArrowBackIcon
+              fontSize='large'
+              onClick={() => navigate(-1)}
+              sx={{ cursor: 'pointer' }}
+            />
             <Grid item xs={12}>
-              <ArrowBackIcon
-                fontSize='large'
-                onClick={() => navigate(-1)}
-                sx={{ cursor: 'pointer' }}
-              />
               <Typography variant='h4' style={{ textAlign: 'center' }}>
                 {category}
               </Typography>

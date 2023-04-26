@@ -68,8 +68,12 @@ const RecipeDetail = () => {
         <>
           <div style={styles.recipeDetail}>
             <div>
-              <Grid container spacing={5}>
-                <Grid item xs={12}>
+              <Grid
+                container
+                spacing={5}
+                style={{ marginLeft: '0', width: '100%' }}
+              >
+                <Grid item xs={12} style={{ paddingLeft: '0' }}>
                   <div style={styles.topIconContainer}>
                     <ArrowBack
                       fontSize='large'

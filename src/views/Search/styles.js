@@ -1,7 +1,7 @@
 const styles = {
   searchContainer: {
     display: 'flex',
-    flexDirection: 'row',
+    flexDirection: { xs: 'column', md: 'row' },
     gap: '2rem',
     margin: '3rem auto 0',
     justifyContent: 'center',

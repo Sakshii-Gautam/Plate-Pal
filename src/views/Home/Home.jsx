@@ -77,7 +77,7 @@ const Home = () => {
       </Box>
 
       <Box sx={{ padding: '5rem' }}>
-        <Typography variant='h4' id='viewRecipes'>
+        <Typography variant={isSmallScreen ? 'h5' : 'h4'} id='viewRecipes'>
           Popular Category
         </Typography>
         <Grid container spacing={4} sx={{ marginTop: '5rem' }}>
@@ -112,7 +112,9 @@ const Home = () => {
       </Box>
 
       <Box sx={{ padding: '5rem' }}>
-        <Typography variant='h4'>Let's try out some Indian</Typography>
+        <Typography variant={isSmallScreen ? 'h5' : 'h4'}>
+          Let's try out some Indian
+        </Typography>
         <Grid
           container
           sx={{ marginTop: '5rem' }}
@@ -132,7 +134,7 @@ const Home = () => {
       </Box>
 
       <Box sx={{ padding: '5rem' }}>
-        <Typography variant='h4'>
+        <Typography variant={isSmallScreen ? 'h5' : 'h4'}>
           Unpredictable Eats: Our Random Meal Selections
         </Typography>
 
@@ -142,7 +144,9 @@ const Home = () => {
       </Box>
 
       <Box sx={{ padding: '5rem' }}>
-        <Typography variant='h4'>Dessert Delights</Typography>
+        <Typography variant={isSmallScreen ? 'h5' : 'h4'}>
+          Dessert Delights
+        </Typography>
         <Grid
           container
           sx={{ marginTop: '5rem' }}
