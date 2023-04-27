@@ -23,11 +23,19 @@ const RecipeDetail = () => {
       area: { meals: similarMeals },
     },
   } = useSelector((state) => state.food);
-  const [isSaved, setIsSaved] = useState(false);
 
+  const [isSaved, setIsSaved] = useState(null);
   const { id } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const existingSavedRecipes =
+    JSON.parse(localStorage.getItem('userSavedRecipes')) || [];
+
+  const isRecipeSaved = existingSavedRecipes.some(
+    (recipe) => recipe.idMeal === id
+  );
+
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -36,19 +44,22 @@ const RecipeDetail = () => {
     });
     dispatch(getRecipeDetailsById(id));
     dispatch(getFoodByArea(meals?.[0].strArea));
+    if (isRecipeSaved) {
+      setIsSaved(true);
+    } else {
+      setIsSaved(false);
+    }
   }, [id]);
 
   const handleRecipeSave = () => {
-    const existingSavedRecipes =
-      JSON.parse(localStorage.getItem('userSavedRecipes')) || [];
-    if (!isSaved) {
+    if (!isSaved && !isRecipeSaved) {
       const updatedSavedRecipes = [...existingSavedRecipes, ...meals];
       localStorage.setItem(
         'userSavedRecipes',
         JSON.stringify(updatedSavedRecipes)
       );
       setIsSaved(true);
-    } else {
+    } else if (isSaved || isRecipeSaved) {
       const updatedSavedRecipes = existingSavedRecipes.filter(
         (recipe) => recipe.idMeal !== id
       );
@@ -80,7 +91,7 @@ const RecipeDetail = () => {
                       onClick={() => navigate(-1)}
                       sx={{ cursor: 'pointer' }}
                     />
-                    {isSaved ? (
+                    {isSaved || isRecipeSaved ? (
                       <Bookmark
                         fontSize='large'
                         onClick={handleRecipeSave}
