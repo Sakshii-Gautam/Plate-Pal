@@ -1,5 +1,7 @@
 # Plate-Pal (Recipe Book Web Application)
 
+Deployed site link: [PlatePal](https://platepal-project.web.app/)
+
 [Assets](https://drive.google.com/drive/folders/10j5bLHoghPrFvNKnYTnPC7gvpPRz-P3P?usp=sharing) or [Previews](/src/assets/previews)
 
 PlatePal is a is a web application that allows users to search for different types of food meals and recipes based on their name, ingredients, categories or regions where it is originated. The users can sign up, login, and logout of the website, browse through different categories of food, see the recipe's details such its images, videos, ingredients, instructions and save their favorite dishes.
